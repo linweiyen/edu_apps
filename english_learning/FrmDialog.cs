@@ -78,5 +78,9 @@ namespace english_learning
         {
 
         }
+
+        private void txtPractice01_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -75,14 +75,17 @@ namespace english_learning
             this.txtPractice01.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPractice01.Location = new System.Drawing.Point(103, 300);
             this.txtPractice01.Name = "txtPractice01";
+            this.txtPractice01.ShortcutsEnabled = false;
             this.txtPractice01.Size = new System.Drawing.Size(905, 92);
             this.txtPractice01.TabIndex = 3;
+            this.txtPractice01.TextChanged += new System.EventHandler(this.txtPractice01_TextChanged);
             // 
             // txtPractice02
             // 
             this.txtPractice02.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPractice02.Location = new System.Drawing.Point(103, 409);
             this.txtPractice02.Name = "txtPractice02";
+            this.txtPractice02.ShortcutsEnabled = false;
             this.txtPractice02.Size = new System.Drawing.Size(905, 92);
             this.txtPractice02.TabIndex = 4;
             // 
@@ -91,6 +94,7 @@ namespace english_learning
             this.txtPractice03.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPractice03.Location = new System.Drawing.Point(103, 518);
             this.txtPractice03.Name = "txtPractice03";
+            this.txtPractice03.ShortcutsEnabled = false;
             this.txtPractice03.Size = new System.Drawing.Size(905, 92);
             this.txtPractice03.TabIndex = 5;
             // 
@@ -99,6 +103,7 @@ namespace english_learning
             this.txtPractice04.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPractice04.Location = new System.Drawing.Point(103, 632);
             this.txtPractice04.Name = "txtPractice04";
+            this.txtPractice04.ShortcutsEnabled = false;
             this.txtPractice04.Size = new System.Drawing.Size(905, 92);
             this.txtPractice04.TabIndex = 6;
             // 
@@ -107,6 +112,7 @@ namespace english_learning
             this.txtPractice05.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPractice05.Location = new System.Drawing.Point(103, 742);
             this.txtPractice05.Name = "txtPractice05";
+            this.txtPractice05.ShortcutsEnabled = false;
             this.txtPractice05.Size = new System.Drawing.Size(905, 92);
             this.txtPractice05.TabIndex = 7;
             // 
@@ -126,7 +132,7 @@ namespace english_learning
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1128, 855);
+            this.ClientSize = new System.Drawing.Size(1128, 998);
             this.ControlBox = false;
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtPractice05);
