@@ -41,13 +41,15 @@ namespace english_learning
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalWordNumber = new System.Windows.Forms.Label();
             this.ckbPassCorrect = new System.Windows.Forms.CheckBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblChinese
             // 
             this.lblChinese.AutoSize = true;
             this.lblChinese.Font = new System.Drawing.Font("Microsoft JhengHei UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChinese.Location = new System.Drawing.Point(41, 146);
+            this.lblChinese.Location = new System.Drawing.Point(50, 278);
             this.lblChinese.Name = "lblChinese";
             this.lblChinese.Size = new System.Drawing.Size(338, 127);
             this.lblChinese.TabIndex = 0;
@@ -56,7 +58,7 @@ namespace english_learning
             // txtEnglish
             // 
             this.txtEnglish.Font = new System.Drawing.Font("Microsoft JhengHei UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEnglish.Location = new System.Drawing.Point(41, 347);
+            this.txtEnglish.Location = new System.Drawing.Point(50, 438);
             this.txtEnglish.Name = "txtEnglish";
             this.txtEnglish.Size = new System.Drawing.Size(1314, 135);
             this.txtEnglish.TabIndex = 1;
@@ -64,7 +66,7 @@ namespace english_learning
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(50, 634);
+            this.btnConfirm.Location = new System.Drawing.Point(55, 646);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(288, 118);
             this.btnConfirm.TabIndex = 2;
@@ -85,7 +87,7 @@ namespace english_learning
             // btnSkip
             // 
             this.btnSkip.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSkip.Location = new System.Drawing.Point(732, 634);
+            this.btnSkip.Location = new System.Drawing.Point(737, 646);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(288, 118);
             this.btnSkip.TabIndex = 4;
@@ -96,7 +98,7 @@ namespace english_learning
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancel.Location = new System.Drawing.Point(384, 634);
+            this.btnCancel.Location = new System.Drawing.Point(389, 646);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(288, 118);
             this.btnCancel.TabIndex = 5;
@@ -107,7 +109,7 @@ namespace english_learning
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReset.Location = new System.Drawing.Point(1076, 634);
+            this.btnReset.Location = new System.Drawing.Point(1081, 646);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(288, 118);
             this.btnReset.TabIndex = 6;
@@ -129,7 +131,7 @@ namespace english_learning
             // 
             this.lblWordInfo.AutoSize = true;
             this.lblWordInfo.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWordInfo.Location = new System.Drawing.Point(413, 180);
+            this.lblWordInfo.Location = new System.Drawing.Point(422, 312);
             this.lblWordInfo.Name = "lblWordInfo";
             this.lblWordInfo.Size = new System.Drawing.Size(182, 68);
             this.lblWordInfo.TabIndex = 8;
@@ -160,20 +162,44 @@ namespace english_learning
             this.ckbPassCorrect.AutoSize = true;
             this.ckbPassCorrect.Checked = true;
             this.ckbPassCorrect.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbPassCorrect.Location = new System.Drawing.Point(50, 542);
+            this.ckbPassCorrect.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ckbPassCorrect.Location = new System.Drawing.Point(945, 176);
             this.ckbPassCorrect.Name = "ckbPassCorrect";
-            this.ckbPassCorrect.Size = new System.Drawing.Size(325, 42);
+            this.ckbPassCorrect.Size = new System.Drawing.Size(420, 54);
             this.ckbPassCorrect.TabIndex = 11;
             this.ckbPassCorrect.Text = "略過已正確答對文字";
             this.ckbPassCorrect.UseVisualStyleBackColor = true;
             this.ckbPassCorrect.CheckedChanged += new System.EventHandler(this.ckbPassCorrect_CheckedChanged);
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(316, 176);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(494, 58);
+            this.cbCategory.TabIndex = 12;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(65, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 68);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "篩選分類";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1401, 830);
+            this.ClientSize = new System.Drawing.Size(1407, 830);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.ckbPassCorrect);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTotalWordNumber);
@@ -208,6 +234,9 @@ namespace english_learning
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalWordNumber;
         private System.Windows.Forms.CheckBox ckbPassCorrect;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbCategory;
     }
 }
 

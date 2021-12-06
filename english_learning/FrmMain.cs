@@ -18,7 +18,7 @@ namespace english_learning
         private String _CorrectWordFileName = "correct_words.txt";
         private List<Word> _Result = new List<Word>();
         private List<String> _PassedWord = new List<String>();
-        private Int32 _CurrentWordIndex = 0;
+        private Int32 _CurrentWordIndex = -1;
         private Int32 _CorrectNumber = 0;
         private Int32 _TotalNumber = 0;
 
@@ -37,22 +37,35 @@ namespace english_learning
                 this._PassedWord.Add(item);
             }
 
+            List<string> category_list = new List<string>();
+
             this._Result.Clear();
             foreach (var item in list)
             {
-                if(ckbPassCorrect.Checked && this._PassedWord.Contains(item[0]))
+                category_list.Add(item[3]);
+                if (ckbPassCorrect.Checked && this._PassedWord.Contains(item[0]))
                 {
                     continue;
                 }
                 this._Result.Add(new Word(item[0], item[1], item[2], item[3]));
             }
 
+            category_list = category_list.Distinct().ToList(); //Get only the unique items
+
+            //Binding to combobax
+            this.cbCategory.Items.Clear();
+            this.cbCategory.Items.Add("");
+            foreach (var item in category_list)
+            {
+                this.cbCategory.Items.Add(item);
+            }
+
             this.lblTotalWordNumber.Text = this._Result.Count.ToString();
             this._TotalNumber = 0;
             this._CorrectNumber = 0;
-            this._CurrentWordIndex = 0;
+            this._CurrentWordIndex = -1;
             this._ShowRecord();
-            this._ShowCurrentWordInfo();
+            this._NextWord();
 
         }
 
@@ -75,14 +88,20 @@ namespace english_learning
 
         private void _NextWord()
         {
-            this._CurrentWordIndex++;
-            if (this._CurrentWordIndex >= this._Result.Count)
+            do
             {
-                MessageBox.Show("測驗結束，得分是 " + this.lblResult.Text);
-                return;
-            }
-            this._ShowCurrentWordInfo();
+                this._CurrentWordIndex++;
+                if (this._CurrentWordIndex >= this._Result.Count)
+                {
+                    MessageBox.Show("測驗結束，得分是 " + this.lblResult.Text);
+                    this._Reload();
+                    return;
+                }
+                if (this.cbCategory.Text == "" || this._Result[this._CurrentWordIndex].Category == this.cbCategory.Text)
+                    break;
+            } while (true);
 
+            this._ShowCurrentWordInfo();
         }
 
 
@@ -156,6 +175,12 @@ namespace english_learning
         private void ckbPassCorrect_CheckedChanged(object sender, EventArgs e)
         {
             this._Reload();
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this._CurrentWordIndex--;
+            this._NextWord();
         }
     }
 }
