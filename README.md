@@ -3,7 +3,7 @@
 
 # 不開發直接使用
 ## 直接執行
-- (1) 下載[壓縮包](https://github.com/linweiyen/edu_apps/blob/main/english_learning_exe.zip)，並解壓縮
+- (1) 下載 [english_learning_exe.zip](https://github.com/linweiyen/edu_apps/blob/main/english_learning_exe.zip)，並解壓縮
 - (2) 執行 english_learning.exe
 - (3) 如果系統未安裝 .Net Core 3.1，會跳出視窗要求安裝，安裝完後再執行 english_learning.exe 即可
 
