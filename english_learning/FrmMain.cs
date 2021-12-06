@@ -179,7 +179,8 @@ namespace english_learning
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this._CurrentWordIndex--;
+            //每次選擇，重新開始
+            this._CurrentWordIndex = -1;
             this._NextWord();
         }
     }
