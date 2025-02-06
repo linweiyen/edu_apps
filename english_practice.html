@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文單字練習</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007AFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005ecb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>英文單字練習</h2>
+        <h3 id="word">載入中...</h3>
+        <input type="text" id="answer" placeholder="輸入英文" />
+        <button onclick="checkAnswer()">確認</button>
+    </div>
+
+    <script>
+        let words = [
+            { "chinese": "蘋果", "english": "apple" },
+            { "chinese": "跑步", "english": "run" },
+            { "chinese": "書", "english": "book" },
+            { "chinese": "學校", "english": "school" }
+        ];
+        let currentIndex = 0;
+
+        function displayWord() {
+            if (currentIndex < words.length) {
+                document.getElementById("word").textContent = words[currentIndex].chinese;
+                document.getElementById("answer").value = "";
+            } else {
+                document.getElementById("word").textContent = "所有單字已完成！";
+                document.getElementById("answer").disabled = true;
+            }
+        }
+
+        function checkAnswer() {
+            const userInput = document.getElementById("answer").value.trim();
+            const correctAnswer = words[currentIndex].english;
+            if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
+                alert("回答正確！");
+                currentIndex++;
+                displayWord();
+            } else {
+                alert(`答案錯誤！正確答案是：${correctAnswer}`);
+            }
+        }
+
+        window.onload = displayWord;
+    </script>
+</body>
+</html>
